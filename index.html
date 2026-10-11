@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Cozinha - Rayana & Douglas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Tela da Carta com Lacre de Cera -->
+    <div id="envelope-screen" class="envelope-container">
+        <div class="envelope">
+            <div class="wax-seal" onclick="openEnvelope()">
+                <span>R&D</span>
+            </div>
+            <p class="click-hint">Clique no lacre para abrir</p>
+        </div>
+        <div id="letter-content" class="letter hidden">
+            <div class="letter-inner">
+                <h1 class="names-title">Rayana & Douglas</h1>
+                <p class="welcome-text">Com alegria, convidamos você para compartilhar conosco um momento muito especial.<br><br>Será uma alegria ter você conosco nesse dia tão especial!<br><br>"E, sobre tudo isto, ponham o amor, que é o vínculo da perfeição." - Colossenses 3:14</p>
+                <button class="btn-primary" onclick="enterSite()">Ver Lista de Presentes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal do Site -->
+    <div id="main-content" class="main-content hidden">
+        <header>
+            <h1>Chá de Cozinha</h1>
+            <h2>Rayana & Douglas</h2>
+            <p>01 de Novembro de 2026 às 15h</p>
+        </header>
+
+        <nav class="categories">
+            <button class="cat-btn active" onclick="filterCategory('Todos')">Todos</button>
+            <button class="cat-btn" onclick="filterCategory('Cozinha')">Cozinha</button>
+            <button class="cat-btn" onclick="filterCategory('Quarto')">Quarto</button>
+            <button class="cat-btn" onclick="filterCategory('Banheiro')">Banheiro</button>
+            <button class="cat-btn" onclick="filterCategory('Sala')">Sala</button>
+            <button class="cat-btn" onclick="filterCategory('Eletroportáteis')">Eletroportáteis</button>
+        </nav>
+
+        <div class="gift-grid" id="gift-grid">
+            <!-- Presentes serão gerados aqui pelo JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal de Reserva -->
+    <div id="reservation-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-gift-name">Nome do Presente</h3>
+            <p>Escolha como deseja presentear:</p>
+            
+            <div class="purchase-options">
+                <button class="btn-option shopee" onclick="selectOption('Shopee')">Comprar na Shopee</button>
+                <button class="btn-option ml" onclick="selectOption('Mercado Livre')">Comprar no Mercado Livre</button>
+                <button class="btn-option physical" onclick="selectOption('Loja Física')">Comprar em Loja Física</button>
+            </div>
+
+            <form id="reservation-form" class="hidden">
+                <input type="hidden" id="selected-option">
+                <input type="hidden" id="gift-id">
+                <input type="text" id="guest-name" placeholder="Seu Nome e Sobrenome" required>
+                <input type="tel" id="guest-phone" placeholder="Seu Telefone (WhatsApp)" required>
+                <button type="submit" class="btn-primary" id="submit-btn">Confirmar Presente</button>
+            </form>
+            
+            <div id="success-message" class="hidden">
+                <h4>Obrigado! 🤎</h4>
+                <p>Sua intenção de presente foi registrada.</p>
+                <p id="store-link-container" class="hidden">
+                    <a href="#" id="store-link" target="_blank" class="btn-primary">Acessar Loja para Comprar</a>
+                </p>
+                <p class="whatsapp-hint">Por favor, envie uma mensagem para a noiva confirmando!</p>
+                <a href="#" id="wa-link" target="_blank" class="btn-whatsapp">Avisar Noiva no WhatsApp</a>
+                <br><br>
+                <button class="btn-secondary" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
