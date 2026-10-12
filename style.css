@@ -317,3 +317,27 @@ header h2 {
     display: inline-block;
     margin-top: 10px;
 }
+
+/* --- SECÇÃO PIX --- */
+.pix-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 20px;
+    background-color: var(--beige-light);
+    border-radius: 10px;
+    border: 2px dashed var(--brown-light);
+}
+
+.pix-message {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--brown-dark);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.pix-btn {
+    font-size: 18px;
+    padding: 15px 35px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
